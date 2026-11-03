@@ -3,6 +3,7 @@
 .author__urls.is-visible{display:block;z-index:30}
 .page__content [id]{scroll-margin-top:90px}
 .author__avatar img{height:auto}
+.page__content video{max-width:100%;height:auto}
 .skip-link{position:fixed;top:-100px;left:1em;z-index:100;background:#fff;padding:.5em 1em}
 .skip-link:focus{top:5px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

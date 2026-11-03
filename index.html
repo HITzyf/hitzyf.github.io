@@ -56,6 +56,10 @@
           <li><strong>主动复测与系统评价：</strong>根据当前地图、高斯点状态和观测记录选择复测位置与连续路线，通过 Isaac Sim 虚拟 RGB-D 相机采集新观测；完成 SplaTAM、GS-ICP SLAM、VarSplat 基线比较及被动／主动等组件消融。</li>
         </ul>
         <p><strong>项目成果：</strong>在 <strong>Replica room0（seed0）仿真</strong>中完成 321 帧在线建图与主动复测。与原生 SplaTAM 使用相同观测数量和跟踪、建图迭代预算，全图 <strong>PSNR 提升 3.71 dB</strong>、<strong>LPIPS 降低 0.0207</strong>，完整轨迹 <strong>ATE 降低 0.23 mm 至 2.78 mm</strong>。</p>
+        <video width="720" height="405" controls playsinline preload="metadata" aria-label="可靠性建图与主动复测（3DGS-SLAM）演示视频">
+          <source src="assets/gs-slam.mp4" type="video/mp4">
+          您的浏览器不支持视频播放，可<a href="assets/gs-slam.mp4">打开视频</a>观看。
+        </video>
         <hr>
         <h2 id="real-to-sim">RGB-D 场景重建与仿真数据生成（Real-to-Sim）</h2>
         <p><em>个人项目 ｜ 2026.03 – 2026.06</em></p>
@@ -66,6 +70,11 @@
           <li><strong>数据生成与跨采集验证：</strong>统一 Gaussian／Isaac 的相机、坐标与输出协议，导出 RGB、Depth、Semantic ID 和 Camera Pose；在 3RScan 官方参考位姿条件下，按独立采集划分建图、选模与测试，完成 264 帧实拍／Gaussian／Isaac 三栏对照回放。</li>
         </ul>
         <p><strong>项目成果：</strong>在 Replica room0 的 <strong>8 个未参与建图的测试视角</strong>上，达到 <strong>PSNR 30.90 dB、深度 MAE 1.55 cm</strong>；在 Replica room0 与 TUM 的固定验证集消融中，相比相同初始化、仅 RGB 监督的版本，逆深度监督使深度 MAE 分别降低 <strong>70.4%、53.4%</strong>。</p>
+
+        <video width="720" height="405" controls playsinline preload="metadata" aria-label="RGB-D 场景重建与仿真数据生成（Real-to-Sim）演示视频">
+          <source src="assets/real2sim.mp4" type="video/mp4">
+          您的浏览器不支持视频播放，可<a href="assets/real2sim.mp4">打开视频</a>观看。
+        </video>
 
         <h1 id="projects">项目经历</h1>
         <h2 id="dovsg">动态开放词汇三维场景图与语言任务规划（DOVSG）</h2>
@@ -78,6 +87,10 @@
           <li><strong>局部更新与故障修复：</strong>根据录制的观测更新局部场景图；修复合并循环过早退出导致的盘子重复建档问题，以及仿真中实例编号复用导致的物体移动后关系未更新问题。</li>
         </ul>
         <p><strong>项目成果：</strong>完成 room1 的 <strong>739 帧位姿估计</strong>，初始地图含 <strong>63 个物体实例</strong>；连续三次更新中同一盘子的实例数由 <strong>2/2/3 降为 1/1/1</strong>。</p>
+        <video width="720" height="405" controls playsinline preload="metadata" aria-label="动态开放词汇三维场景图与语言任务规划（DOVSG）演示视频">
+          <source src="assets/dovsg.mp4" type="video/mp4">
+          您的浏览器不支持视频播放，可<a href="assets/dovsg.mp4">打开视频</a>观看。
+        </video>
         <hr>
         <h2 id="rekep">语言驱动机械臂操作系统（ReKep）</h2>
         <p><em>个人项目 ｜ 2025.01 – 2025.05</em></p>
