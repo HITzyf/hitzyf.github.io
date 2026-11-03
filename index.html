@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f9f8f5">
+  <title>郑奕飞 Yifei Zheng | 三维重建与机器人感知</title>
+  <meta name="description" content="郑奕飞，哈尔滨工业大学控制工程硕士研究生。关注三维重建、RGB-D SLAM、Real-to-Sim 与具身感知。">
+  <link rel="canonical" href="https://hitzyf.github.io/">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <style>
+    :root{--paper:#f9f8f5;--white:#fff;--ink:#262b2b;--muted:#6e7473;--line:#e4e5df;--accent:#793c3d;--tint:#f2eae6;--green:#627361;--serif:Georgia,'Noto Serif SC','Source Han Serif SC','Songti SC',SimSun,serif;--sans:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:38px}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.85 var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit}a,button,summary{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:5px}::selection{background:#e8d6cd}h1,h2,h3,p{margin:0}svg{display:block}a.text-link{color:var(--accent);border-bottom:1px solid #c5abaa}a.text-link:hover{border-color:var(--accent)}.skip{position:fixed;top:-80px;left:20px;padding:10px 20px;background:var(--ink);color:white;z-index:50}.skip:focus{top:15px}
+    .layout{max-width:1240px;margin:auto;display:grid;grid-template-columns:235px minmax(0,1fr);gap:76px;padding:0 46px}.sidebar{position:sticky;top:0;height:100vh;max-height:1100px;padding:58px 0 32px;display:flex;flex-direction:column;border-right:1px solid var(--line);padding-right:30px}.brand{display:flex;align-items:center;gap:11px;letter-spacing:.12em;font-size:11px;font-weight:600}.brand-symbol{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;font:16px var(--serif);letter-spacing:0}.identity{margin-top:55px}.identity h2{font-family:var(--serif);font-size:26px;letter-spacing:.14em;font-weight:600}.identity .english{color:var(--muted);font-size:13px;letter-spacing:.08em;margin:6px 0 18px}.identity p{font-size:12px;line-height:1.9;color:var(--muted)}.sidebar-rule{width:25px;height:2px;background:var(--accent);margin:27px 0 24px}.nav{display:flex;flex-direction:column;gap:4px}.nav a{position:relative;display:flex;gap:15px;align-items:center;padding:8px 0;color:var(--muted);font-size:13px;transition:color .2s}.nav a span{font-size:10px;color:#969b98;font-variant-numeric:tabular-nums;letter-spacing:.04em}.nav a:hover,.nav a.active{color:var(--accent)}.nav a.active{font-weight:600}.nav a.active:after{content:'';width:4px;height:4px;background:var(--accent);border-radius:50%;position:absolute;right:4px}.side-bottom{margin-top:auto;padding-top:34px}.side-bottom a{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--accent);width:fit-content}.side-bottom p{font-size:10px;color:#8c908a;letter-spacing:.07em;margin-top:14px}.icon{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+    main{min-width:0;padding:65px 0 0}.eyebrow{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase}.eyebrow:before{content:'';width:23px;height:1px;background:var(--accent)}.hero{padding-bottom:43px}.hero-name{display:flex;align-items:baseline;gap:24px;margin-top:27px}.hero h1{font-family:var(--serif);font-size:49px;font-weight:600;letter-spacing:.12em;line-height:1.35}.hero .latin{font:italic 29px/1.3 var(--serif);color:#7b807a}.hero .position{font-size:14px;letter-spacing:.03em;margin-top:16px;color:#555d59}.hero .intro{font-size:15px;line-height:2.08;color:#505855;max-width:740px;margin-top:24px}.hero .intro strong{color:var(--ink);font-weight:500}.interest-line{display:flex;flex-wrap:wrap;gap:8px 18px;margin:20px 0 0;font-size:11px;color:var(--green);letter-spacing:.03em}.interest-line span:not(:last-child):after{content:'/';color:#b5b9af;margin-left:18px}.actions{display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin-top:29px}.button{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--ink);background:var(--ink);color:#fff;padding:9px 17px;font-size:12px;cursor:pointer;transition:background .2s,border-color .2s}.button:hover{background:var(--accent);border-color:var(--accent)}.email-link{display:flex;align-items:center;gap:8px;font-size:12px;color:#646c66}.email-link:hover{color:var(--accent)}.availability{margin-top:25px;display:flex;gap:8px;align-items:center;font-size:11px;color:#768171}.availability:before{content:'';width:5px;height:5px;flex-shrink:0;background:#7f9275;border-radius:50%}
+    .section{border-top:1px solid var(--line);padding-top:34px;margin-top:0;padding-bottom:47px;scroll-margin-top:25px}.section-heading{display:flex;align-items:baseline;justify-content:space-between;gap:15px;margin-bottom:27px}.section-heading h2{font:600 23px/1.5 var(--serif);letter-spacing:.08em}.section-heading .en{font-size:10px;letter-spacing:.16em;color:#8b918b;text-transform:uppercase}.section-intro{color:var(--muted);font-size:13px;margin:-13px 0 25px}.research-card{border:1px solid var(--line);background:var(--white);padding:27px 29px 0;margin-top:19px;position:relative}.research-card:first-of-type{margin-top:0}.project-overline{font-size:10px;letter-spacing:.09em;color:var(--accent);display:flex;align-items:center;gap:10px}.project-overline .index{font:italic 14px var(--serif)}.project-topline{display:flex;justify-content:space-between;align-items:center;gap:12px}.date{font-size:11px;white-space:nowrap;color:#8a908a;font-variant-numeric:tabular-nums}.research-card h3{font:600 21px/1.6 var(--serif);margin-top:13px;letter-spacing:.015em}.subtitle{font-size:11px;letter-spacing:.025em;color:#8a908a;margin-top:3px}.project-description{font-size:13px;color:#5a625e;line-height:1.95;margin-top:18px}.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:17px}.tags span{font-size:9px;line-height:1.5;padding:4px 8px;color:#69756b;background:#f2f5f0;border-radius:2px;letter-spacing:.02em}.metrics{display:flex;gap:38px;margin-top:25px;padding-top:22px;border-top:1px solid #eee}.metric{min-width:0}.metric .value{font:29px/1.3 var(--serif);letter-spacing:-.04em;color:var(--accent)}.metric .unit{font:12px var(--sans);letter-spacing:0;margin-left:3px;color:var(--accent)}.metric .label{display:block;font-size:10px;color:#828880;margin-top:5px}.metric-note{font-size:10px;color:#858a83;line-height:1.75;margin:15px 0 21px;max-width:640px}.project-details{border-top:1px solid var(--line);margin:0 -29px}.project-details summary{display:flex;justify-content:space-between;align-items:center;cursor:pointer;list-style:none;font-size:11px;color:#5d665e;padding:13px 29px;user-select:none}.project-details summary::-webkit-details-marker{display:none}.project-details summary:hover{background:#fafbf8}.project-details summary svg{width:13px;height:13px;transition:transform .2s}.project-details[open] summary svg{transform:rotate(45deg)}.project-details ul{margin:0;padding:5px 32px 24px 47px;font-size:12px;color:#626b64;line-height:1.95}.project-details li+li{margin-top:9px}.project-details strong{font-weight:500;color:#343e35}
+    .project-row{display:grid;grid-template-columns:30px minmax(0,1fr);gap:13px;padding:25px 0;border-top:1px solid var(--line)}.project-row.first{border-top:0;padding-top:0}.row-number{font:italic 17px/1.5 var(--serif);color:#a5aaa1;padding-top:2px}.row-title{display:flex;justify-content:space-between;align-items:baseline;gap:14px}.row-title h3{font-size:16px;font-weight:550;line-height:1.7}.project-row .role{font-size:10px;color:var(--accent);margin-top:5px}.project-row .description{font-size:13px;line-height:1.95;color:#69716a;margin-top:11px}.project-row .outcome{font-size:11px;color:#50634d;margin-top:13px;line-height:1.9}.project-row details{margin-top:12px}.project-row summary{cursor:pointer;color:#7b817a;font-size:11px;width:fit-content}.project-row details ul{font-size:12px;color:#69716a;padding-left:18px;margin:12px 0 0;line-height:1.9}.project-row details li+li{margin-top:7px}
+    .education-item{display:grid;grid-template-columns:145px 1fr;gap:22px;margin-top:25px}.education-item:first-of-type{margin-top:0}.education-date{font-size:11px;color:#8b908b;padding-top:4px;letter-spacing:.02em}.education-content h3{font-size:16px;font-weight:550}.degree{font-size:12px;color:var(--accent);margin-top:2px}.courses{font-size:11px;line-height:1.95;color:#858a83;margin-top:9px}.education-item+.education-item{padding-top:23px;border-top:1px solid var(--line)}.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px 36px}.skill h3{font-size:12px;font-weight:600;color:#4d5e49;display:flex;gap:8px;align-items:center}.skill h3:before{content:'';width:4px;height:4px;background:#a3b39c}.skill p{font-size:12px;color:#798075;line-height:1.95;margin-top:9px}.contact{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;padding-bottom:37px}.contact h2{font:600 23px/1.5 var(--serif);letter-spacing:.08em}.contact .contact-note{font-size:12px;color:#798075;margin-top:8px}.contact-email{font:23px/1.6 var(--serif);color:var(--accent);display:inline-block;margin-top:18px;border-bottom:1px solid #d0bdb5}.contact-email:hover{border-color:var(--accent)}.copy-button{display:flex;align-items:center;gap:8px;border:1px solid #d9ded5;background:transparent;padding:8px 12px;color:#6f786d;cursor:pointer;font-size:11px}.copy-button:hover{background:#eef1ea}.footer{border-top:1px solid var(--line);padding:20px 0 30px;display:flex;justify-content:space-between;align-items:center;gap:16px;color:#93988f;font-size:10px;letter-spacing:.025em}.footer a{display:flex;gap:6px;align-items:center}.footer a:hover{color:var(--accent)}.footer .icon{width:12px;height:12px}.toast{position:fixed;bottom:25px;left:50%;transform:translate(-50%,15px);background:var(--ink);color:#fff;padding:10px 20px;font-size:12px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:20}.toast.visible{opacity:1;transform:translate(-50%,0)}
+    @media(min-width:1500px){.layout{max-width:1300px;grid-template-columns:245px minmax(0,1fr);gap:90px}.hero{padding-top:10px}}
+    @media(max-width:1050px){.layout{grid-template-columns:190px minmax(0,1fr);gap:42px;padding:0 30px}.sidebar{padding-right:22px}.hero-name{gap:14px}.hero h1{font-size:43px}.hero .latin{font-size:25px}.research-card{padding:24px 23px 0}.project-details{margin:0 -23px}.project-details summary{padding:13px 23px}.metrics{gap:26px}.row-title{display:block}.row-title .date{display:block;margin-top:4px}}
+    @media(max-width:760px){html{scroll-padding-top:95px}.layout{display:block;padding:0 24px}.sidebar{height:auto;max-height:none;position:sticky;top:0;padding:13px 0 0;border-right:0;border-bottom:1px solid var(--line);background:rgba(249,248,245,.97);z-index:10;display:block;backdrop-filter:blur(10px)}.brand{font-size:10px;letter-spacing:.13em;gap:9px}.brand-symbol{width:26px;height:26px;font-size:13px}.identity,.sidebar-rule,.side-bottom{display:none}.nav{flex-direction:row;gap:22px;overflow-x:auto;white-space:nowrap;margin-top:7px;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.nav a{padding:10px 0 11px;font-size:11px;gap:0}.nav a span{display:none}.nav a.active:after{width:100%;height:2px;border-radius:0;right:0;bottom:0}.hero{padding-top:31px;padding-bottom:33px}main{padding-top:0}.eyebrow{font-size:9px}.hero-name{gap:16px;flex-wrap:wrap;margin-top:20px}.hero h1{font-size:39px}.hero .latin{font-size:24px}.hero .position{font-size:12px;margin-top:12px}.hero .intro{font-size:13px;line-height:2;margin-top:21px}.interest-line{font-size:10px;gap:7px 11px}.interest-line span:not(:last-child):after{margin-left:11px}.actions{gap:18px;margin-top:24px}.email-link{font-size:11px}.button{font-size:11px}.availability{font-size:10px}.section{padding-top:27px;padding-bottom:34px;scroll-margin-top:100px}.section-heading{margin-bottom:22px}.section-heading h2,.contact h2{font-size:22px}.section-heading .en{font-size:8px;letter-spacing:.1em}.section-intro{font-size:12px}.research-card{padding:22px 19px 0}.project-topline{align-items:flex-start;gap:10px}.project-overline{font-size:9px;gap:7px}.date{font-size:10px}.research-card h3{font-size:19px;margin-top:11px}.subtitle{font-size:10px}.project-description{font-size:12px;margin-top:14px}.metrics{gap:20px;margin-top:20px;padding-top:19px}.metric .value{font-size:26px}.metric .unit{font-size:10px}.metric .label{font-size:9px}.metric-note{font-size:9px}.project-details{margin:0 -19px}.project-details summary{padding:12px 19px}.project-details ul{font-size:11px;padding:5px 23px 20px 36px}.project-row{gap:9px;grid-template-columns:23px minmax(0,1fr);padding:22px 0}.row-title h3{font-size:14px}.project-row .description{font-size:12px}.project-row .outcome{font-size:10px}.education-item{grid-template-columns:1fr;gap:5px}.education-date{font-size:10px}.education-content h3{font-size:15px}.courses{font-size:10px}.skills-grid{gap:23px}.skill p{font-size:11px}.contact{grid-template-columns:1fr}.contact-email{font-size:22px;word-break:break-word}.copy-button{width:fit-content}.footer{font-size:9px}.toast{white-space:nowrap}}
+    @media(max-width:380px){.layout{padding:0 17px}.hero-name{gap:10px}.hero h1{font-size:35px}.hero .latin{font-size:21px}.metrics{gap:15px}.metric .value{font-size:23px}.skills-grid{grid-template-columns:1fr}.nav{gap:20px}.research-card{padding-left:16px;padding-right:16px}.project-details{margin-left:-16px;margin-right:-16px}.project-topline{flex-wrap:wrap}.actions{gap:12px}.email-link{font-size:10px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+    .metric-note,.skill p,.courses,.contact .contact-note,.date,.education-date,.subtitle,.metric .label{color:#69716a}.metric-note{font-size:11px}.tags span{font-size:10px}.section-heading .en,.footer{color:#71796d}
+    @media(max-width:760px){.metric-note,.skill p,.courses{font-size:11px}.metric .label{font-size:10px}}
+    @media print{body{background:#fff;font-size:11px}.layout{display:block;max-width:none;padding:0}.sidebar,.actions,.availability,.copy-button,.footer,.toast{display:none}main{padding:0}.hero{padding-bottom:20px}.hero-name{margin-top:12px}.hero h1{font-size:30px}.hero .intro{font-size:12px}.section{padding:20px 0}.research-card{break-inside:avoid}.project-row{break-inside:avoid}.contact{display:block}.contact-email{font-size:18px}.project-details{display:none}.section-heading{margin-bottom:15px}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">跳转到主要内容</a>
+  <div class="layout">
+    <aside class="sidebar" aria-label="个人信息与页面导航">
+      <a class="brand" href="#about" aria-label="郑奕飞个人主页"><span class="brand-symbol" aria-hidden="true">Z.</span><span>YIFEI ZHENG</span></a>
+      <div class="identity"><h2>郑奕飞</h2><div class="english">Yifei Zheng</div><p>控制工程 · 硕士研究生<br>哈尔滨工业大学</p></div>
+      <div class="sidebar-rule"></div>
+      <nav class="nav" aria-label="主导航">
+        <a href="#about" class="active" aria-current="location"><span>01</span>个人简介</a>
+        <a href="#research"><span>02</span>研究经历</a>
+        <a href="#projects"><span>03</span>项目经历</a>
+        <a href="#education"><span>04</span>教育背景</a>
+        <a href="#skills"><span>05</span>技术能力</a>
+        <a href="#contact"><span>06</span>联系我</a>
+      </nav>
+      <div class="side-bottom"><a href="mailto:1966534038@qq.com"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 6 9 7 9-7"/></svg>邮件联系</a><p>3D VISION & ROBOTICS</p></div>
+    </aside>
+    <main id="main">
+      <section id="about" class="hero" aria-labelledby="name">
+        <div class="eyebrow">Personal homepage</div>
+        <div class="hero-name"><h1 id="name">郑奕飞</h1><span class="latin" lang="en">Yifei Zheng</span></div>
+        <p class="position">三维重建与机器人感知 · 哈尔滨工业大学</p>
+        <p class="intro">你好！我目前在<strong>哈尔滨工业大学</strong>攻读控制工程硕士学位，本科毕业于哈尔滨工业大学（深圳）自动化专业。我的研究与实践聚焦于<strong>三维重建、RGB-D SLAM 与具身感知</strong>，关注退化观测下的可靠建图、真实场景到仿真的转换，以及语言驱动的机器人操作。</p>
+        <div class="interest-line" aria-label="研究方向"><span>3D Reconstruction</span><span>RGB-D SLAM</span><span>Real-to-Sim</span><span>Embodied Perception</span></div>
+        <div class="actions"><a class="button" href="#contact">联系我<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a class="email-link" href="mailto:1966534038@qq.com"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 6 9 7 9-7"/></svg>1966534038@qq.com</a></div>
+        <p class="availability">寻求三维重建算法实习机会</p>
+      </section>
+
+      <section id="research" class="section" aria-labelledby="research-title">
+        <div class="section-heading"><h2 id="research-title">研究经历</h2><span class="en">Selected research</span></div>
+        <p class="section-intro">从可靠的场景表示，到可交互的仿真环境。</p>
+        <article class="research-card">
+          <div class="project-topline"><div class="project-overline"><span class="index">01</span> 硕士课题 · 3DGS-SLAM</div><span class="date">2026.07 — 至今</span></div>
+          <h3>可靠性建图与主动复测</h3><p class="subtitle" lang="en">Reliable Mapping & Active Re-observation</p>
+          <p class="project-description">基于 SplaTAM，研究弱光、深度缺失等退化观测下的 RGB-D 可靠建图。分别评估颜色与深度观测的可靠性，维护高斯地图状态，并在 Isaac Sim 中通过主动复测补充观测，形成建图与复测闭环。</p>
+          <div class="tags"><span>3D Gaussian Splatting</span><span>RGB-D SLAM</span><span>Active Mapping</span><span>Isaac Sim</span></div>
+          <div class="metrics"><div class="metric"><span class="value">+3.71<span class="unit">dB</span></span><span class="label">PSNR 提升</span></div><div class="metric"><span class="value">−0.0207</span><span class="label">LPIPS 降低</span></div><div class="metric"><span class="value">2.78<span class="unit">mm</span></span><span class="label">完整轨迹 ATE</span></div></div>
+          <p class="metric-note">Replica room0（seed0）仿真，321 帧；相较原生 SplaTAM，使用相同观测数量及跟踪、建图迭代预算。ATE 降低 0.23 mm。</p>
+          <details class="project-details"><summary>方法与实验细节<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><ul>
+            <li><strong>模态独立可靠性建图：</strong>利用历史地图渲染参照及深度几何一致性识别颜色暗化，依据深度有效性生成独立深度掩码，分别筛选 RGB 与 Depth 观测；保留原生跟踪流程，对照独立与统一可靠性策略。</li>
+            <li><strong>高斯地图状态维护：</strong>实现暂存、稳定、待确认三状态转换，分别控制颜色和深度观测的更新权限；同步高斯点增删后的状态，支持冲突点隔离与恢复，并阻止优化器继续更新已隔离参数。</li>
+            <li><strong>主动复测与评价：</strong>根据当前地图、高斯状态和观测记录选择复测位置与连续路线，通过 Isaac Sim 虚拟 RGB-D 相机采集新观测；完成 SplaTAM、GS-ICP SLAM、VarSplat 基线比较及被动／主动等组件消融。</li>
+          </ul></details>
+        </article>
+        <article class="research-card">
+          <div class="project-topline"><div class="project-overline"><span class="index">02</span> 个人项目 · REAL-TO-SIM</div><span class="date">2026.03 — 2026.06</span></div>
+          <h3>RGB-D 场景重建与仿真数据生成</h3><p class="subtitle" lang="en">Scene Reconstruction & Simulation Data Generation</p>
+          <p class="project-description">结合 VGGT、3D Gaussian Splatting 与 Isaac Sim，构建从 RGB-D 场景重建到仿真资产和多模态数据生成的流程。以逆深度监督改善重建深度一致性，通过 Gaussian 与 TSDF 网格双表示支持对象移动与场景同步。</p>
+          <div class="tags"><span>VGGT</span><span>3DGS</span><span>TSDF</span><span>Isaac Sim</span><span>3RScan</span></div>
+          <div class="metrics"><div class="metric"><span class="value">30.90<span class="unit">dB</span></span><span class="label">PSNR</span></div><div class="metric"><span class="value">1.55<span class="unit">cm</span></span><span class="label">深度 MAE</span></div><div class="metric"><span class="value">8</span><span class="label">留出测试视角</span></div></div>
+          <p class="metric-note">以上结果来自 Replica room0 的 8 个未参与建图的测试视角。</p>
+          <details class="project-details"><summary>方法与实验细节<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><ul>
+            <li><strong>几何初始化：</strong>用 VGGT 估计相机与几何，利用建图帧深度恢复米制尺度，结合标定内参、RGB-D ICP 和位姿图优化生成初始点云，在 3DGS 训练中加入逆深度监督。</li>
+            <li><strong>仿真资产：</strong>融合 RGB-D 构建 TSDF 网格，关联 Gaussian 与网格对象标签，生成可视资产和碰撞代理并导入 Isaac Sim；支持指定对象的刚体移动、双表示同步更新与重置。</li>
+            <li><strong>数据与评估：</strong>统一 Gaussian／Isaac 相机、坐标与输出协议，导出 RGB、Depth、Semantic ID 和 Camera Pose。在 3RScan 官方参考位姿条件下，按独立采集划分建图、选模和测试，完成 264 帧实拍／Gaussian／Isaac 三栏对照回放。</li>
+            <li><strong>逆深度监督消融：</strong>在 Replica room0 与 TUM 的固定验证集上，相较相同初始化、仅 RGB 监督的版本，深度 MAE 分别降低 70.4% 与 53.4%。</li>
+          </ul></details>
+        </article>
+      </section>
+
+      <section id="projects" class="section" aria-labelledby="projects-title">
+        <div class="section-heading"><h2 id="projects-title">项目经历</h2><span class="en">Robotics projects</span></div>
+        <article class="project-row first"><span class="row-number" aria-hidden="true">01</span><div><div class="row-title"><h3>动态开放词汇三维场景图与语言任务规划</h3><span class="date">2025.12 — 2026.02</span></div><p class="role">个人项目 · DOVSG</p><p class="description">复现 DovSG 的三维建图、重定位与语言任务规划。结合开放词汇感知关联物体，使用本地 Qwen2.5 拆解中文指令并规划多目标离线路径；另在独立 Panda 机械臂仿真中完成抓放和地图更新。</p><p class="outcome">room1：739 帧位姿估计 · 63 个初始物体实例 · 连续三次更新的盘子实例数由 2/2/3 修复为 1/1/1</p><details><summary>查看实现细节</summary><ul><li>使用 DROID-SLAM、GroundingDINO、SAM2 和 CLIP 建图并关联物体；训练 ACE，结合 LightGlue 与多尺度彩色 ICP 对齐新观测。</li><li>用 Qwen2.5-7B-Instruct 拆解中文指令，通过 CLIP 查找目标、A* 规划多目标离线路径，检查目标与动作顺序。</li><li>在 Panda 仿真中基于颜色分割与深度定位红椒，完成抓放、夹持与落盘稳定性检查，使用夹起和放下后新生成的 RGB-D 完成两次地图更新。</li><li>修复合并循环过早退出导致的盘子重复建档，以及仿真实例编号复用导致的移动后关系未更新问题。</li></ul></details></div></article>
+        <article class="project-row"><span class="row-number" aria-hidden="true">02</span><div><div class="row-title"><h3>SpaceMouse / Pika 机械臂遥操作采集平台</h3><span class="date">2025.09 — 2025.12</span></div><p class="role">核心成员 · TELEOPERATION</p><p class="description">搭建仿真与实机双端遥操作平台，为具身操作策略训练采集专家示教数据。将 Pika Sense 手部 6D 位姿通过坐标转换与增量映射接入 ROS，驱动 UR5 完成抓取放置。</p><p class="outcome">抓取放置、开门各 300 条示教轨迹 · Pika–UR5 实机末端操控误差 &lt;1 cm</p><details><summary>查看实现细节</summary><ul><li>通过 SpaceMouse 完成抓取放置与开门任务的仿真遥操作采集。</li><li>所采数据支撑团队训练的抓取放置、开门策略，仿真成功率分别达到 93%、87%。</li><li>完成 Pika–UR5 实机遥操作验证，打通手部位姿到机器人末端的映射流程。</li></ul></details></div></article>
+        <article class="project-row"><span class="row-number" aria-hidden="true">03</span><div><div class="row-title"><h3>语言驱动机械臂操作系统</h3><span class="date">2025.01 — 2025.05</span></div><p class="role">个人项目 · REKEP</p><p class="description">基于 ReKep 串联关键点感知、语言约束生成与机器人执行。在 OmniGibson 中部署收纳、倒茶任务，并完成 UR5 抓取放置实机闭环验证，支持执行监测、失败回溯与重规划。</p><p class="outcome">UR5 Pick and Place 实机验证 · 目标追踪误差 &lt;1 cm</p><details><summary>查看实现细节</summary><ul><li>集成 DINOv2 场景关键点提取与 GPT-4o 语言推理，将操作指令转换为空间和路径约束。</li><li>完成六轴机械臂运动学建模与外置相机视觉平台搭建，基于 PnP 实现目标追踪。</li><li>加入执行监测与失败回溯，支持目标移动、掉落后的重规划，集成视觉感知、语言规划与机械臂控制。</li></ul></details></div></article>
+      </section>
+
+      <section id="education" class="section" aria-labelledby="education-title">
+        <div class="section-heading"><h2 id="education-title">教育背景</h2><span class="en">Education</span></div>
+        <div class="education-item"><div class="education-date">2025.09 — 至今</div><div class="education-content"><h3>哈尔滨工业大学</h3><p class="degree">硕士 · 控制工程</p><p class="courses">核心课程：数值分析（91）、智能控制（90）、线性系统（88）、机器人机构学与控制（88）</p></div></div>
+        <div class="education-item"><div class="education-date">2021.09 — 2025.06</div><div class="education-content"><h3>哈尔滨工业大学（深圳）</h3><p class="degree">本科 · 自动化</p><p class="courses">核心课程：数据结构（100）、自动控制理论（86）、自动控制实践（88）、模拟电子技术（88）</p></div></div>
+      </section>
+
+      <section id="skills" class="section" aria-labelledby="skills-title">
+        <div class="section-heading"><h2 id="skills-title">技术能力</h2><span class="en">Technical skills</span></div>
+        <div class="skills-grid"><div class="skill"><h3>三维视觉与重建</h3><p>RGB-D 反投影、相机模型与坐标变换、ICP 配准、TSDF 融合；3DGS / gsplat、VGGT、ORB-SLAM3 项目实践。</p></div><div class="skill"><h3>具身感知与规划</h3><p>GroundingDINO、SAM2、DINOv2、开放词汇三维场景图；VLM / LLM 任务规划与 A* 路径规划。</p></div><div class="skill"><h3>开发与仿真</h3><p>Python、C、PyTorch、OpenCV、ROS、Isaac Sim、OmniGibson。</p></div><div class="skill"><h3>语言</h3><p>英语 · CET-6</p></div></div>
+      </section>
+
+      <section id="contact" class="section contact" aria-labelledby="contact-title"><div><h2 id="contact-title">联系我</h2><p class="contact-note">欢迎交流三维重建、机器人感知与相关实习机会。</p><a class="contact-email" href="mailto:1966534038@qq.com">1966534038@qq.com</a></div><button class="copy-button" type="button" id="copy-email"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="1"/><path d="M16 8V3H3v13h5"/></svg><span>复制邮箱</span></button></section>
+      <footer class="footer"><span>© 2026 郑奕飞 · Yifei Zheng</span><a href="#about">返回顶部<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V4m-6 6 6-6 6 6"/></svg></a></footer>
+    </main>
+  </div>
+  <div class="toast" role="status" aria-live="polite" id="toast"></div>
+  <script>
+    const navLinks = [...document.querySelectorAll('.nav a')];
+    const sections = navLinks.map(link => document.querySelector(link.getAttribute('href')));
+    let scheduled = false;
+    function updateNavigation() {
+      const threshold = window.innerWidth <= 760 ? 150 : 130;
+      let current = sections[0];
+      for (const section of sections) if (section.getBoundingClientRect().top <= threshold) current = section;
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 12) current = sections.at(-1);
+      for (const link of navLinks) {
+        const active = link.hash === '#' + current.id;
+        link.classList.toggle('active', active);
+        if (active) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current');
+      }
+      scheduled = false;
+    }
+    window.addEventListener('scroll', () => { if (!scheduled) { scheduled = true; requestAnimationFrame(updateNavigation); } }, {passive:true});
+    window.addEventListener('resize', updateNavigation);
+    window.addEventListener('load', updateNavigation);
+    let toastTimer;
+    function notify(message) {const toast = document.getElementById('toast');toast.textContent = message;toast.classList.add('visible');clearTimeout(toastTimer);toastTimer = setTimeout(() => toast.classList.remove('visible'), 2800);}
+    document.getElementById('copy-email').addEventListener('click', async () => {
+      try {await navigator.clipboard.writeText('1966534038@qq.com');notify('邮箱已复制');}
+      catch {const email = document.querySelector('.contact-email');const range = document.createRange();range.selectNodeContents(email);const selection = window.getSelection();selection.removeAllRanges();selection.addRange(range);let copied = false;try {copied = document.execCommand('copy');} catch {}if(copied) selection.removeAllRanges();notify(copied ? '邮箱已复制' : '已选中邮箱，请手动复制');}
+    });
+  </script>
+</body>
+</html>
