@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>个人简介 - 郑奕飞</title>
-  <meta name="description" content="郑奕飞，哈尔滨工业大学控制工程硕士研究生，关注三维重建、RGB-D SLAM、Real-to-Sim 与机器人感知。">
+  <meta name="description" content="郑奕飞，哈尔滨工业大学控制工程硕士研究生，研究 RGB-D SLAM、3D Gaussian Splatting、三维场景重建与理解，求职三维重建算法实习生。">
   <link rel="canonical" href="https://hitzyf.github.io/">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="assets/main.css">
@@ -19,7 +19,7 @@
   <div class="sidebar sticky">
     <div itemscope itemtype="https://schema.org/Person">
       <div class="author__avatar"><img src="assets/avatar.svg" class="author__avatar" alt="郑奕飞的头像占位图" width="400" height="561"></div>
-      <div class="author__content"><h3 class="author__name" itemprop="name">郑奕飞</h3><p class="author__bio">研究三维重建、RGB-D SLAM 与机器人感知</p></div>
+      <div class="author__content"><h3 class="author__name" itemprop="name">郑奕飞</h3><p class="author__bio">RGB-D SLAM、3D Gaussian Splatting、三维场景重建与理解</p></div>
       <div class="author__urls-wrapper">
         <button class="btn btn--inverse" type="button" aria-expanded="false" aria-controls="author-links">Follow</button>
         <ul class="author__urls social-icons" id="author-links">
@@ -34,59 +34,54 @@
     <div class="page__inner-wrap">
       <header><h1 class="page__title" itemprop="headline" id="about">个人简介</h1></header>
       <section class="page__content" itemprop="text">
-        <p>现于<strong>哈尔滨工业大学</strong>控制工程专业攻读硕士学位，本科毕业于<strong>哈尔滨工业大学（深圳）</strong>自动化专业。研究与实践方向为<strong>三维重建、RGB-D SLAM 与具身感知</strong>，关注退化观测下的可靠建图、真实场景到仿真的转换，以及语言驱动的机器人操作。目前寻求<strong>三维重建算法实习</strong>机会，欢迎通过 <a href="mailto:1966534038@qq.com">Email</a> 联系。</p>
+        <p>现于<strong>哈尔滨工业大学</strong>控制工程专业攻读硕士学位，本科毕业于<strong>哈尔滨工业大学（深圳）</strong>自动化专业。研究方向为<strong>RGB-D SLAM、3D Gaussian Splatting、三维场景重建与理解</strong>，具备几何重建、地图优化与仿真资产生成的项目实践经验。</p>
+        <p>求职意向：<strong>三维重建算法实习生</strong>。<strong>可立即到岗 ｜ 每周 5 天 ｜ 可连续实习 6 个月</strong>，欢迎通过 <a href="mailto:1966534038@qq.com">Email</a> 联系。</p>
 
         <h1 id="education">教育背景</h1>
         <ul>
-          <li><strong>硕士</strong>，控制工程 <em>哈尔滨工业大学，2025.09 – 至今</em>
-            <ul><li>核心课程：数值分析（91）、智能控制（90）、线性系统（88）、机器人机构学与控制（88）</li></ul>
+          <li><strong>硕士</strong>，控制工程 <em>哈尔滨工业大学，2025.09 – 2028.06（预计）</em>
+            <ul><li>AIUS 实验室 ｜ 硕士一等奖学金</li></ul>
           </li>
-          <li><strong>本科</strong>，自动化 <em>哈尔滨工业大学（深圳），2021.09 – 2025.06</em>
-            <ul><li>核心课程：数据结构（100）、自动控制理论（86）、自动控制实践（88）、模拟电子技术（88）</li><li>英语水平：CET-6</li></ul>
-          </li>
+          <li><strong>本科</strong>，自动化 <em>哈尔滨工业大学（深圳），2021.09 – 2025.06</em></li>
         </ul>
+        <p><strong>相关课程：</strong>数据结构（100）、数值分析（91）、机器人机构学与控制（88） ｜ <strong>英语：</strong>CET-6</p>
 
-        <h1 id="research">研究经历</h1>
-        <h2 id="reliable-mapping">可靠性建图与主动复测（3DGS-SLAM）</h2>
-        <p><em>硕士课题 ｜ 2026.07 – 至今</em></p>
-        <p><strong>项目描述：</strong>基于 SplaTAM，研究弱光、深度缺失等退化观测下的 RGB-D 可靠建图，结合高斯状态维护与主动复测构建仿真闭环。</p>
+        <h1 id="research">实习经历</h1>
+        <h2 id="reliable-mapping">感维智能 · 可靠性建图与主动复测（3DGS-SLAM）</h2>
+        <p><em>实习生 ｜ 2026.07 – 2026.10</em></p>
+        <p><strong>项目概述：</strong>围绕可靠性建图与主动复测（3DGS-SLAM），基于 SplaTAM，面向弱光、深度缺失等退化观测，研究 RGB-D 可靠建图与主动复测方法。</p>
         <ul>
-          <li><strong>模态独立可靠性建图：</strong>利用历史地图渲染参照及深度几何一致性识别颜色暗化，同时依据深度有效性生成独立深度掩码，分别筛选用于建图的 RGB 和 Depth 观测；保留原生跟踪流程，完成独立与统一可靠性策略对照。</li>
-          <li><strong>高斯地图状态维护：</strong>实现同一地图内的暂存、稳定、待确认三状态转换，分别控制颜色和深度观测能否参与更新。处理高斯点增删后的状态同步，支持冲突点的隔离与恢复，避免优化器继续更新已隔离的参数。</li>
-          <li><strong>主动复测与系统评价：</strong>根据当前地图、高斯点状态和观测记录选择复测位置与连续路线，通过 Isaac Sim 虚拟 RGB-D 相机采集新观测；完成 SplaTAM、GS-ICP SLAM、VarSplat 基线比较及被动／主动等组件消融。</li>
+          <li><strong>模态独立建图：</strong>针对颜色与深度退化不同步、统一筛选易丢失有效观测的问题，结合地图渲染参照与深度几何一致性，构建 RGB / Depth 独立可靠性筛选机制，分别约束两类观测参与地图优化。</li>
+          <li><strong>地图维护与主动复测：</strong>针对冲突观测影响地图更新、低可靠区域缺少补充观测的问题，设计高斯点状态管理与隔离恢复机制，并依据地图可靠性选择复测位置和路线，在 Isaac Sim 中完成采集、更新闭环。</li>
         </ul>
-        <p><strong>项目成果：</strong>在 <strong>Replica room0（seed0）仿真</strong>中完成 321 帧在线建图与主动复测。与原生 SplaTAM 使用相同观测数量和跟踪、建图迭代预算，全图 <strong>PSNR 提升 3.71 dB</strong>、<strong>LPIPS 降低 0.0207</strong>，完整轨迹 <strong>ATE 降低 0.23 mm 至 2.78 mm</strong>。</p>
+        <p><strong>项目成果：</strong>在 Replica room0（seed0）完成 <strong>321 帧在线建图与主动复测</strong>；相同观测数量及跟踪、建图迭代预算下，相比原生 SplaTAM，全图 <strong>PSNR 提升 3.71 dB</strong>，<strong>LPIPS 降低 0.0207</strong>，完整轨迹 <strong>ATE 为 2.78 mm</strong>；完成基线对比及被动 / 主动等组件消融。</p>
         <video width="720" height="405" controls playsinline preload="metadata" aria-label="可靠性建图与主动复测（3DGS-SLAM）演示视频">
           <source src="assets/gs-slam.mp4" type="video/mp4">
           您的浏览器不支持视频播放，可<a href="assets/gs-slam.mp4">打开视频</a>观看。
         </video>
-        <hr>
+
+        <h1 id="projects">项目经历</h1>
         <h2 id="real-to-sim">RGB-D 场景重建与仿真数据生成（Real-to-Sim）</h2>
         <p><em>个人项目 ｜ 2026.03 – 2026.06</em></p>
-        <p><strong>项目描述：</strong>面向 RGB-D 观测，结合 VGGT、3D Gaussian Splatting 与 Isaac Sim，构建场景重建、仿真几何及多模态数据生成流程，完成合成场景、真实数据与跨采集评估。</p>
+        <p><strong>项目概述：</strong>结合 VGGT、3DGS 与 Isaac Sim，搭建从 RGB-D 场景重建到仿真资产及多模态数据生成的 Real-to-Sim 流程。</p>
         <ul>
-          <li><strong>几何初始化与重建：</strong>使用 VGGT 估计相机与几何，通过建图帧深度恢复米制尺度，结合标定内参、RGB-D ICP 与位姿图优化生成初始化点云；在 3DGS 训练中加入逆深度监督，改善渲染深度一致性。</li>
-          <li><strong>场景资产与仿真接入：</strong>融合 RGB-D 构建 TSDF 网格，关联 Gaussian 与网格的对象标签，生成可视资产及碰撞代理并导入 Isaac Sim；支持指定对象的刚体移动、双表示同步更新与重置。</li>
-          <li><strong>数据生成与跨采集验证：</strong>统一 Gaussian／Isaac 的相机、坐标与输出协议，导出 RGB、Depth、Semantic ID 和 Camera Pose；在 3RScan 官方参考位姿条件下，按独立采集划分建图、选模与测试，完成 264 帧实拍／Gaussian／Isaac 三栏对照回放。</li>
+          <li><strong>几何重建优化：</strong>针对纯 RGB 几何预测缺少米制尺度、仅 RGB 监督下深度一致性不足的问题，融合 RGB-D 尺度恢复、配准与位姿图优化，并引入逆深度监督；固定验证集消融中，相比相同初始化的 RGB 监督版本，Replica room0 / TUM 的深度 MAE 分别降低 <strong>70.4% / 53.4%</strong>。</li>
+          <li><strong>仿真资产构建：</strong>针对 3DGS 外观表示难以直接用于物理交互的问题，融合 TSDF 网格构建碰撞代理，通过对象标签关联高斯与网格表示，实现 Isaac Sim 场景导入、对象刚体移动及双表示同步更新。</li>
+          <li><strong>重建与数据验证：</strong>在 Replica room0 的 <strong>8 个未参与建图的测试视角</strong>上，<strong>PSNR 达 30.90 dB</strong>，深度 <strong>MAE 为 1.55 cm</strong>；统一两端相机与坐标约定，导出 RGB、深度、语义及位姿数据，并在 3RScan 官方参考位姿条件下完成跨采集划分与对照验证。</li>
         </ul>
-        <p><strong>项目成果：</strong>在 Replica room0 的 <strong>8 个未参与建图的测试视角</strong>上，达到 <strong>PSNR 30.90 dB、深度 MAE 1.55 cm</strong>；在 Replica room0 与 TUM 的固定验证集消融中，相比相同初始化、仅 RGB 监督的版本，逆深度监督使深度 MAE 分别降低 <strong>70.4%、53.4%</strong>。</p>
-
         <video width="720" height="405" controls playsinline preload="metadata" aria-label="RGB-D 场景重建与仿真数据生成（Real-to-Sim）演示视频">
           <source src="assets/real2sim.mp4" type="video/mp4">
           您的浏览器不支持视频播放，可<a href="assets/real2sim.mp4">打开视频</a>观看。
         </video>
-
-        <h1 id="projects">项目经历</h1>
+        <hr>
         <h2 id="dovsg">动态开放词汇三维场景图与语言任务规划（DOVSG）</h2>
         <p><em>个人项目 ｜ 2025.12 – 2026.02</em></p>
-        <p><strong>项目描述：</strong>复现 DovSG 的三维建图、重定位和语言任务规划，另在独立机械臂仿真中完成抓放及地图更新。</p>
+        <p><strong>项目概述：</strong>复现 DovSG 的三维建图、重定位与语言任务规划，并在独立机械臂仿真中验证抓放后的地图更新。</p>
         <ul>
-          <li><strong>三维语义建图与重定位：</strong>使用 DROID-SLAM、GroundingDINO、SAM2 和 CLIP 建图并关联物体；训练 ACE，结合 LightGlue 和多尺度彩色 ICP 对齐新观测。</li>
-          <li><strong>语言任务规划：</strong>用本地 Qwen2.5-7B-Instruct 拆解中文指令，通过 CLIP 查找目标、A* 规划多目标离线路径，并检查目标与动作顺序。</li>
-          <li><strong>机械臂操作（物理仿真）：</strong>通过颜色分割和深度信息定位目标位置，在 Panda 仿真中完成红椒抓放，检查夹持与落盘后的稳定状态，并用夹起、放下后新生成的 RGB-D 完成两次地图更新。</li>
-          <li><strong>局部更新与故障修复：</strong>根据录制的观测更新局部场景图；修复合并循环过早退出导致的盘子重复建档问题，以及仿真中实例编号复用导致的物体移动后关系未更新问题。</li>
+          <li><strong>开放词汇感知与规划：</strong>针对中文指令到三维目标定位与任务路径的衔接需求，基于 DROID-SLAM、GroundingDINO / SAM2 与 CLIP 构建物体级语义地图，接入本地 Qwen2.5 完成指令拆解、目标检索及多目标路径规划，并检查目标与动作顺序。</li>
+          <li><strong>动态地图一致性：</strong>针对增量更新中物体重复建档、移动后空间关系未更新的问题，改进实例合并与关联逻辑；连续三次更新中，同一盘子的实例数由 <strong>2 / 2 / 3 降为 1 / 1 / 1</strong>。另在 Panda 物理仿真中完成抓放，并利用操作后的新观测验证两次地图更新。</li>
+          <li><strong>系统验证：</strong>完成 room1 的 <strong>739 帧位姿估计</strong>与包含 <strong>63 个物体实例</strong>的初始地图构建，打通语义建图、重定位、语言任务规划及局部更新流程。</li>
         </ul>
-        <p><strong>项目成果：</strong>完成 room1 的 <strong>739 帧位姿估计</strong>，初始地图含 <strong>63 个物体实例</strong>；连续三次更新中同一盘子的实例数由 <strong>2/2/3 降为 1/1/1</strong>。</p>
         <video width="720" height="405" controls playsinline preload="metadata" aria-label="动态开放词汇三维场景图与语言任务规划（DOVSG）演示视频">
           <source src="assets/dovsg.mp4" type="video/mp4">
           您的浏览器不支持视频播放，可<a href="assets/dovsg.mp4">打开视频</a>观看。
@@ -94,28 +89,25 @@
         <hr>
         <h2 id="rekep">语言驱动机械臂操作系统（ReKep）</h2>
         <p><em>个人项目 ｜ 2025.01 – 2025.05</em></p>
-        <p><strong>项目描述：</strong>基于 ReKep 串联视觉感知、语言约束生成与执行，完成仿真及 UR5 实机抓取放置验证。</p>
+        <p><strong>项目概述：</strong>基于 ReKep，完成视觉感知、语言约束生成与机械臂执行的集成，并开展仿真及 UR5 实机验证。</p>
         <ul>
-          <li><strong>感知与任务规划：</strong>集成 DINOv2 场景关键点提取与 GPT-4o 语言推理，将操作指令转化为空间及路径约束，在 OmniGibson 中部署收纳、倒茶任务。</li>
-          <li><strong>实机部署与闭环控制：</strong>完成六轴机械臂运动学建模与外置相机视觉平台搭建，基于 PnP 实现目标追踪；加入执行监测与失败回溯，支持目标移动、掉落后的重规划。</li>
+          <li><strong>语言约束与任务执行：</strong>面向自然语言操作任务，集成 DINOv2 关键点提取与 GPT-4o 推理，将指令转化为空间及路径约束，在 OmniGibson 中部署收纳、倒茶任务。</li>
+          <li><strong>实机闭环与异常恢复：</strong>针对目标移动、物体掉落导致原计划失效的问题，结合视觉追踪、执行监测与失败回溯触发重规划；完成六轴机械臂建模与相机平台搭建，在 UR5 上验证 <strong>Pick and Place 闭环</strong>，目标追踪误差 <strong>&lt;1 cm</strong>。</li>
         </ul>
-        <p><strong>项目成果：</strong>完成 <strong>UR5 的 Pick and Place 实机闭环验证</strong>，目标追踪误差 <strong>&lt;1 cm</strong>，实现视觉感知、语言规划与机械臂控制的集成部署。</p>
         <hr>
         <h2 id="teleoperation">SpaceMouse / Pika 机械臂遥操作采集平台</h2>
         <p><em>核心成员 ｜ 2025.09 – 2025.12</em></p>
-        <p><strong>项目描述：</strong>搭建仿真与实机双端遥操作平台，为具身操作策略训练提供专家示教数据。</p>
+        <p><strong>项目概述：</strong>搭建仿真与实机双端遥操作平台，为团队具身操作策略训练提供专家示教数据。</p>
         <ul>
-          <li><strong>仿真数据采集：</strong>基于 SpaceMouse 完成抓取放置、开门任务的遥操作采集，各获取 <strong>300 条示教轨迹</strong>，支撑团队策略训练。</li>
-          <li><strong>实机遥操作：</strong>将 Pika Sense 手部 6D 位姿通过坐标转换与增量映射接入 ROS，驱动 UR5 完成 Pick and Place。</li>
+          <li><strong>示教数据采集：</strong>面向抓取放置与开门策略的示教需求，基于 SpaceMouse 搭建仿真采集流程，每项任务采集 <strong>300 条轨迹</strong>；支撑团队训练的两项策略分别达到 <strong>93% 和 87% 的仿真成功率</strong>。</li>
+          <li><strong>实机遥操作接入：</strong>针对手部与机械臂坐标不一致的问题，将 Pika Sense 的手部 6D 位姿经坐标变换与增量映射接入 ROS，驱动 UR5 完成 Pick and Place 遥操作验证，末端操控误差 <strong>&lt;1 cm</strong>。</li>
         </ul>
-        <p><strong>项目成果：</strong>所采数据支撑团队训练的抓取放置、开门策略，分别达到 <strong>93%、87% 的仿真成功率</strong>；完成 Pika–UR5 实机遥操作验证，末端操控误差 <strong>&lt;1 cm</strong>。</p>
 
         <h1 id="skills">技术能力</h1>
         <ul>
           <li><strong>三维视觉与重建：</strong>RGB-D 反投影、相机模型与坐标变换、ICP 配准、TSDF 融合；具备 3DGS / gsplat、VGGT、ORB-SLAM3 项目实践。</li>
           <li><strong>具身感知与规划：</strong>GroundingDINO、SAM2、DINOv2、开放词汇三维场景图；具备 VLM / LLM 任务规划及 A* 路径规划实践。</li>
           <li><strong>开发与仿真：</strong>Python、C、PyTorch、OpenCV、ROS、Isaac Sim、OmniGibson。</li>
-          <li><strong>英语水平：</strong>CET-6。</li>
         </ul>
       </section>
     </div>
@@ -124,7 +116,7 @@
 <div class="page__footer"><footer>
   <a href="sitemap.html">Sitemap</a>
   <div class="page__footer-follow"><ul class="social-icons"><li><strong>Follow:</strong></li><li><a href="https://github.com/HITzyf">GitHub</a></li><li><a href="feed.xml">Feed</a></li></ul></div>
-  <div class="page__footer-copyright">© 2026 郑奕飞, Design based on <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br>Site last updated 2026-11-03</div>
+  <div class="page__footer-copyright">© 2026 郑奕飞, Design based on <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br>Site last updated 2026-11-04</div>
 </footer></div>
 <script src="assets/site.js"></script>
 </body>
