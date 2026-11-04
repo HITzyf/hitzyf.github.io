@@ -9,7 +9,7 @@
 - `index.html`：个人简介、教育、实习与项目内容。
 - `assets/main.css`：AcademicPages 原始主题样式。
 - `assets/site.css` / `assets/site.js`：头像和图标适配、移动端 Follow 菜单及页脚。
-- `assets/avatar.svg`：中性头像占位图，可替换为本人的照片。
+- `assets/profile.jpg`：个人照片。
 - `assets/gs-slam.mp4`、`assets/real2sim.mp4`、`assets/dovsg.mp4`：对应项目的原始 1080p 演示视频，使用原生播放器。
 - `sitemap.html`、`sitemap.xml`、`feed.xml`：网站地图与订阅。
 
