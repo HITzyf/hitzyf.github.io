@@ -22,4 +22,5 @@
 .interview-player:fullscreen .interview-stage,.interview-player.is-expanded .interview-stage{width:min(100vw,calc((100dvh - 104px)*16/9));height:auto;flex-shrink:0}
 .interview-player:fullscreen .interview-controls,.interview-player:fullscreen .interview-chapter,.interview-player.is-expanded .interview-controls,.interview-player.is-expanded .interview-chapter{width:min(100vw,calc((100dvh - 104px)*16/9));box-sizing:border-box}
 body.interview-expanded{overflow:hidden}
+body.interview-expanded .masthead,body.interview-expanded .sidebar,body.interview-expanded .page__footer{visibility:hidden}
 @media(max-width:480px){.interview-controls{gap:4px;padding:6px}.interview-controls button{padding:6px}.interview-time{font-size:11px}.interview-speed-label{font-size:0}.interview-speed{font-size:11px!important}.interview-chapter{font-size:11px}.interview-caption{font-size:3.3cqw;min-height:18%;padding:1% 3%}.interview-controls .interview-play{min-width:66px}}

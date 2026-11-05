@@ -4,6 +4,19 @@
   const SCRIPT_URL = new URL('interview-script.json?v=20261105-1', document.currentScript.src);
   const units = text => Array.from(text).reduce((n, c) => n + (/\s/.test(c) ? 0 : /[\x00-\x7f]/.test(c) ? 0.55 : 1), 0);
   const formatTime = n => `${Math.floor(n / 60)}:${String(Math.floor(n % 60)).padStart(2, '0')}`;
+  function captionLines(text) {
+    if (units(text) <= 28) return text;
+    const middle = units(text) / 2;
+    let best = 0, score = Infinity;
+    for (let i = 1; i < text.length; i++) {
+      const left = units(text.slice(0, i)), right = units(text.slice(i));
+      if (left < 8 || left > 28 || right > 28) continue;
+      if (/[A-Za-z0-9-]/.test(text[i - 1]) && /[A-Za-z0-9-]/.test(text[i])) continue;
+      const candidate = Math.abs(left - middle) + (/[，。；！？\s]/.test(text[i - 1]) ? 0 : 8);
+      if (candidate < score) { score = candidate; best = i; }
+    }
+    return best ? text.slice(0, best) + '\n' + text.slice(best) : text;
+  }
   function splitCues(text) {
     const parts = text.match(/[^，。；！？\n]+[，。；！？]?/g) || [text];
     const cues = [];
@@ -142,7 +155,8 @@
         if (scene.card === 'outro') this.card.innerHTML = '<div class="interview-card-eyebrow">三维感知 · 项目实践</div><h3>感谢聆听</h3><p>RGB-D 点云处理 · 配准与地图更新<br>PyTorch · 模型实验与消融验证</p><div class="interview-card-topics">可立即到岗 ｜ 每周 5 天 ｜ 连续 6 个月</div>';
       }
       const cue = scene.cues.find(c => this.time < c.end) || scene.cues.at(-1);
-      if (this.caption.textContent !== cue.text) this.caption.textContent = cue.text;
+      const caption = captionLines(cue.text);
+      if (this.caption.textContent !== caption) this.caption.textContent = caption;
       this.timeDisplay.textContent = `${formatTime(this.time)} / ${formatTime(this.duration)}`;
       this.seek.value = String(this.time);
       this.seek.setAttribute('aria-valuetext', `${formatTime(this.time)}，${scene.label}`);
