@@ -9,6 +9,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="assets/main.css">
   <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/interview-player.css?v=20261105-1">
   <link rel="alternate" type="application/atom+xml" title="郑奕飞" href="feed.xml">
   <script>document.documentElement.className='js';</script>
 </head>
@@ -55,7 +56,7 @@
           <li><strong>地图维护与主动复测：</strong>针对冲突观测影响地图更新、低可靠区域缺少补充观测的问题，设计高斯点状态管理与隔离恢复机制，并依据地图可靠性选择复测位置和路线，在 Isaac Sim 中完成采集、更新闭环。</li>
         </ul>
         <p><strong>项目成果：</strong>在 Replica room0（seed0）完成 <strong>321 帧在线建图与主动复测</strong>；相同观测数量及跟踪、建图迭代预算下，相比原生 SplaTAM，全图 <strong>PSNR 提升 3.71 dB</strong>，<strong>LPIPS 降低 0.0207</strong>，完整轨迹 <strong>ATE 为 2.78 mm</strong>；完成基线对比及被动 / 主动等组件消融。</p>
-        <video width="720" height="405" controls playsinline preload="metadata" aria-label="可靠性建图与主动复测（3DGS-SLAM）演示视频">
+        <video data-interview="gs-slam" width="720" height="405" controls playsinline preload="metadata" aria-label="可靠性建图与主动复测（3DGS-SLAM）演示视频">
           <source src="assets/gs-slam.mp4" type="video/mp4">
           您的浏览器不支持视频播放，可<a href="assets/gs-slam.mp4">打开视频</a>观看。
         </video>
@@ -69,7 +70,7 @@
           <li><strong>仿真资产构建：</strong>针对 3DGS 外观表示难以直接用于物理交互的问题，融合 TSDF 网格构建碰撞代理，通过对象标签关联高斯与网格表示，实现 Isaac Sim 场景导入、对象刚体移动及双表示同步更新。</li>
           <li><strong>重建与数据验证：</strong>在 Replica room0 的 <strong>8 个未参与建图的测试视角</strong>上，<strong>PSNR 达 30.90 dB</strong>，深度 <strong>MAE 为 1.55 cm</strong>；统一两端相机与坐标约定，导出 RGB、深度、语义及位姿数据，并在 3RScan 官方参考位姿条件下完成跨采集划分与对照验证。</li>
         </ul>
-        <video width="720" height="405" controls playsinline preload="metadata" aria-label="RGB-D 场景重建与仿真数据生成（Real-to-Sim）演示视频">
+        <video data-interview="real2sim" width="720" height="405" controls playsinline preload="metadata" aria-label="RGB-D 场景重建与仿真数据生成（Real-to-Sim）演示视频">
           <source src="assets/real2sim.mp4" type="video/mp4">
           您的浏览器不支持视频播放，可<a href="assets/real2sim.mp4">打开视频</a>观看。
         </video>
@@ -82,7 +83,7 @@
           <li><strong>动态地图一致性：</strong>针对增量更新中物体重复建档、移动后空间关系未更新的问题，改进实例合并与关联逻辑；连续三次更新中，同一盘子的实例数由 <strong>2 / 2 / 3 降为 1 / 1 / 1</strong>。另在 Panda 物理仿真中完成抓放，并利用操作后的新观测验证两次地图更新。</li>
           <li><strong>系统验证：</strong>完成 room1 的 <strong>739 帧位姿估计</strong>与包含 <strong>63 个物体实例</strong>的初始地图构建，打通语义建图、重定位、语言任务规划及局部更新流程。</li>
         </ul>
-        <video width="720" height="405" controls playsinline preload="metadata" aria-label="动态开放词汇三维场景图与语言任务规划（DOVSG）演示视频">
+        <video data-interview="dovsg" width="720" height="405" controls playsinline preload="metadata" aria-label="动态开放词汇三维场景图与语言任务规划（DOVSG）演示视频">
           <source src="assets/dovsg.mp4" type="video/mp4">
           您的浏览器不支持视频播放，可<a href="assets/dovsg.mp4">打开视频</a>观看。
         </video>
@@ -119,5 +120,6 @@
   <div class="page__footer-copyright">© 2026 郑奕飞, Design based on <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br>Site last updated 2026-11-04</div>
 </footer></div>
 <script src="assets/site.js"></script>
+<script src="assets/interview-player.js?v=20261105-1" defer></script>
 </body>
 </html>
