@@ -10,13 +10,15 @@
 - `assets/main.css`：AcademicPages 原始主题样式。
 - `assets/site.css` / `assets/site.js`：头像和图标适配、移动端 Follow 菜单及页脚。
 - `assets/profile.jpg`：个人照片。
-- `assets/gs-slam.mp4`、`assets/real2sim.mp4`、`assets/dovsg.mp4`：对应项目的原始 1080p 演示素材。
+- `assets/gs-slam.mp4`、`assets/real2sim.mp4`、`assets/dovsg.mp4`：对应项目的 1080p 字幕替换版演示视频。
 - `sitemap.html`、`sitemap.xml`、`feed.xml`：网站地图与订阅。
 
 无构建依赖。GitHub Pages 从 `main` 分支根目录发布。不含电话号码或完整 PDF 简历。
 
 主题许可和来源见 `THEME-LICENSE.txt`、`THEME-SOURCES.md`。
 
-## 面试讲解字幕
+## 项目视频
 
-前三个项目默认使用完整自我介绍字幕播放器，保留原始视频文件。`assets/interview-script.json` 保存逐段讲稿和原视频的场景时间范围；`interview-player.js` 按朗读长度生成字幕时间轴，自动对齐并调整画面速度。开场在第一个播放器，结束语在第三个播放器。可暂停、上一句/下一句、拖动进度、调节语速及全屏。字幕在网页播放器内显示，原始 MP4 下载文件不含新增字幕。JavaScript 或讲稿加载失败时保留原生视频播放。
+三个项目使用浏览器原生视频播放器，按原始顺序和速度播放用户提供的字幕替换版 MP4。字幕已包含在视频画面中，GS-SLAM、Real2Sim、DOVSG 的时长分别为 180、143、90 秒。视频链接含内容版本参数，以刷新旧缓存。
+
+旧的 `interview-player.js`、`interview-player.css` 和 `interview-script.json` 保留在仓库中，但主页不再加载，避免重复覆盖字幕、强制静音或按旧时间轴截取新视频。
