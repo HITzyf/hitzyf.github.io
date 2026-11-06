@@ -9,6 +9,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="assets/main.css">
   <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/chapters.css">
   <link rel="alternate" type="application/atom+xml" title="郑奕飞" href="feed.xml">
   <script>document.documentElement.className='js';</script>
 </head>
@@ -55,10 +56,44 @@
           <li><strong>地图维护与主动复测：</strong>针对冲突观测影响地图更新、低可靠区域缺少补充观测的问题，设计高斯点状态管理与隔离恢复机制，并依据地图可靠性选择复测位置和路线，在 Isaac Sim 中完成采集、更新闭环。</li>
         </ul>
         <p><strong>项目成果：</strong>在 Replica room0（seed0）完成 <strong>321 帧在线建图与主动复测</strong>；相同观测数量及跟踪、建图迭代预算下，相比原生 SplaTAM，全图 <strong>PSNR 提升 3.71 dB</strong>，<strong>LPIPS 降低 0.0207</strong>，完整轨迹 <strong>ATE 为 2.78 mm</strong>；完成基线对比及被动 / 主动等组件消融。</p>
-        <video width="720" height="405" controls playsinline preload="metadata" aria-label="可靠性建图与主动复测（3DGS-SLAM）演示视频">
-          <source src="assets/gs-slam.mp4?v=2b6631a2" type="video/mp4">
-          您的浏览器不支持视频播放，可<a href="assets/gs-slam.mp4?v=2b6631a2">打开视频</a>观看。
-        </video>
+        <div class="chapter-player">
+          <video id="video-gs-slam" width="720" height="405" controls playsinline preload="metadata" src="assets/chapters/gs-slam/01.mp4" aria-label="可靠性建图与主动复测（3DGS-SLAM）演示视频" aria-describedby="gs-slam-01">
+            您的浏览器不支持视频播放，可<a href="assets/chapters/gs-slam/01.mp4">打开视频</a>观看。
+          </video>
+          <div class="chapter-list" role="group" aria-label="可靠性建图与主动复测（3DGS-SLAM）演示视频章节">
+            <button type="button" id="gs-slam-01" aria-controls="video-gs-slam" aria-pressed="true" data-src="assets/chapters/gs-slam/01.mp4">
+              <span class="chapter-number">01</span>
+              <span class="chapter-title">弱光下，哪些观测还能用？</span>
+              <span class="chapter-time">00:00–00:20</span>
+            </button>
+            <button type="button" id="gs-slam-02" aria-controls="video-gs-slam" aria-pressed="false" data-src="assets/chapters/gs-slam/02.mp4">
+              <span class="chapter-number">02</span>
+              <span class="chapter-title">分别筛选颜色和深度</span>
+              <span class="chapter-time">00:20–00:55</span>
+            </button>
+            <button type="button" id="gs-slam-03" aria-controls="video-gs-slam" aria-pressed="false" data-src="assets/chapters/gs-slam/03.mp4">
+              <span class="chapter-number">03</span>
+              <span class="chapter-title">地图怎样处理前后矛盾的观测？</span>
+              <span class="chapter-time">00:55–01:30</span>
+            </button>
+            <button type="button" id="gs-slam-04" aria-controls="video-gs-slam" aria-pressed="false" data-src="assets/chapters/gs-slam/04.mp4">
+              <span class="chapter-number">04</span>
+              <span class="chapter-title">让相机找位置补看</span>
+              <span class="chapter-time">01:30–02:10</span>
+            </button>
+            <button type="button" id="gs-slam-05" aria-controls="video-gs-slam" aria-pressed="false" data-src="assets/chapters/gs-slam/05.mp4">
+              <span class="chapter-number">05</span>
+              <span class="chapter-title">和基线比较，改动带来了什么？</span>
+              <span class="chapter-time">02:10–02:40</span>
+            </button>
+            <button type="button" id="gs-slam-06" aria-controls="video-gs-slam" aria-pressed="false" data-src="assets/chapters/gs-slam/06.mp4">
+              <span class="chapter-number">06</span>
+              <span class="chapter-title">最终结果与适用范围</span>
+              <span class="chapter-time">02:40–03:00</span>
+            </button>
+          </div>
+          <p class="chapter-feedback" role="status" hidden></p>
+        </div>
 
         <h1 id="projects">项目经历</h1>
         <h2 id="real-to-sim">RGB-D 场景重建与仿真数据生成（Real-to-Sim）</h2>
@@ -69,10 +104,34 @@
           <li><strong>仿真资产构建：</strong>针对 3DGS 外观表示难以直接用于物理交互的问题，融合 TSDF 网格构建碰撞代理，通过对象标签关联高斯与网格表示，实现 Isaac Sim 场景导入、对象刚体移动及双表示同步更新。</li>
           <li><strong>重建与数据验证：</strong>在 Replica room0 的 <strong>8 个未参与建图的测试视角</strong>上，<strong>PSNR 达 30.90 dB</strong>，深度 <strong>MAE 为 1.55 cm</strong>；统一两端相机与坐标约定，导出 RGB、深度、语义及位姿数据，并在 3RScan 官方参考位姿条件下完成跨采集划分与对照验证。</li>
         </ul>
-        <video width="720" height="405" controls playsinline preload="metadata" aria-label="RGB-D 场景重建与仿真数据生成（Real-to-Sim）演示视频">
-          <source src="assets/real2sim.mp4?v=99c11027" type="video/mp4">
-          您的浏览器不支持视频播放，可<a href="assets/real2sim.mp4?v=99c11027">打开视频</a>观看。
-        </video>
+        <div class="chapter-player">
+          <video id="video-real2sim" width="720" height="405" controls playsinline preload="metadata" src="assets/chapters/real2sim/01.mp4" aria-label="RGB-D 场景重建与仿真数据生成（Real-to-Sim）演示视频" aria-describedby="real2sim-01">
+            您的浏览器不支持视频播放，可<a href="assets/chapters/real2sim/01.mp4">打开视频</a>观看。
+          </video>
+          <div class="chapter-list" role="group" aria-label="RGB-D 场景重建与仿真数据生成（Real-to-Sim）演示视频章节">
+            <button type="button" id="real2sim-01" aria-controls="video-real2sim" aria-pressed="true" data-src="assets/chapters/real2sim/01.mp4">
+              <span class="chapter-number">01</span>
+              <span class="chapter-title">把房间重建成有真实尺度的场景</span>
+              <span class="chapter-time">00:00–00:20</span>
+            </button>
+            <button type="button" id="real2sim-02" aria-controls="video-real2sim" aria-pressed="false" data-src="assets/chapters/real2sim/02.mp4">
+              <span class="chapter-number">02</span>
+              <span class="chapter-title">让同一个物体在两种表示中一起移动</span>
+              <span class="chapter-time">00:20–00:44</span>
+            </button>
+            <button type="button" id="real2sim-03" aria-controls="video-real2sim" aria-pressed="false" data-src="assets/chapters/real2sim/03.mp4">
+              <span class="chapter-number">03</span>
+              <span class="chapter-title">导出训练数据，检查重建精度</span>
+              <span class="chapter-time">00:44–01:03.6</span>
+            </button>
+            <button type="button" id="real2sim-04" aria-controls="video-real2sim" aria-pressed="false" data-src="assets/chapters/real2sim/04.mp4">
+              <span class="chapter-number">04</span>
+              <span class="chapter-title">换一次采集，还能否对上同一个房间？</span>
+              <span class="chapter-time">01:03.6–01:30</span>
+            </button>
+          </div>
+          <p class="chapter-feedback" role="status" hidden></p>
+        </div>
         <hr>
         <h2 id="dovsg">动态开放词汇三维场景图与语言任务规划（DOVSG）</h2>
         <p><em>个人项目 ｜ 2025.12 – 2026.02</em></p>
@@ -82,10 +141,34 @@
           <li><strong>动态地图一致性：</strong>针对增量更新中物体重复建档、移动后空间关系未更新的问题，改进实例合并与关联逻辑；连续三次更新中，同一盘子的实例数由 <strong>2 / 2 / 3 降为 1 / 1 / 1</strong>。另在 Panda 物理仿真中完成抓放，并利用操作后的新观测验证两次地图更新。</li>
           <li><strong>系统验证：</strong>完成 room1 的 <strong>739 帧位姿估计</strong>与包含 <strong>63 个物体实例</strong>的初始地图构建，打通语义建图、重定位、语言任务规划及局部更新流程。</li>
         </ul>
-        <video width="720" height="405" controls playsinline preload="metadata" aria-label="动态开放词汇三维场景图与语言任务规划（DOVSG）演示视频">
-          <source src="assets/dovsg.mp4?v=d483192c" type="video/mp4">
-          您的浏览器不支持视频播放，可<a href="assets/dovsg.mp4?v=d483192c">打开视频</a>观看。
-        </video>
+        <div class="chapter-player">
+          <video id="video-dovsg" width="720" height="405" controls playsinline preload="metadata" src="assets/chapters/dovsg/01.mp4" aria-label="动态开放词汇三维场景图与语言任务规划（DOVSG）演示视频" aria-describedby="dovsg-01">
+            您的浏览器不支持视频播放，可<a href="assets/chapters/dovsg/01.mp4">打开视频</a>观看。
+          </video>
+          <div class="chapter-list" role="group" aria-label="动态开放词汇三维场景图与语言任务规划（DOVSG）演示视频章节">
+            <button type="button" id="dovsg-01" aria-controls="video-dovsg" aria-pressed="true" data-src="assets/chapters/dovsg/01.mp4">
+              <span class="chapter-number">01</span>
+              <span class="chapter-title">建立物体地图，再把新视角定位回来</span>
+              <span class="chapter-time">00:00–00:20</span>
+            </button>
+            <button type="button" id="dovsg-02" aria-controls="video-dovsg" aria-pressed="false" data-src="assets/chapters/dovsg/02.mp4">
+              <span class="chapter-number">02</span>
+              <span class="chapter-title">把一句中文指令变成有顺序的路线</span>
+              <span class="chapter-time">00:20–00:38</span>
+            </button>
+            <button type="button" id="dovsg-03" aria-controls="video-dovsg" aria-pressed="false" data-src="assets/chapters/dovsg/03.mp4">
+              <span class="chapter-number">03</span>
+              <span class="chapter-title">抓放以后，地图能否看到变化？</span>
+              <span class="chapter-time">00:38–01:08</span>
+            </button>
+            <button type="button" id="dovsg-04" aria-controls="video-dovsg" aria-pressed="false" data-src="assets/chapters/dovsg/04.mp4">
+              <span class="chapter-number">04</span>
+              <span class="chapter-title">修复同一盘子被重复建档的问题</span>
+              <span class="chapter-time">01:08–01:30</span>
+            </button>
+          </div>
+          <p class="chapter-feedback" role="status" hidden></p>
+        </div>
         <hr>
         <h2 id="rekep">语言驱动机械臂操作系统（ReKep）</h2>
         <p><em>个人项目 ｜ 2025.01 – 2025.05</em></p>
@@ -119,5 +202,6 @@
   <div class="page__footer-copyright">© 2026 郑奕飞, Design based on <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br>Site last updated 2026-11-04</div>
 </footer></div>
 <script src="assets/site.js"></script>
+<script src="assets/chapters.js"></script>
 </body>
 </html>
